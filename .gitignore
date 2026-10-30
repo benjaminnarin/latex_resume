@@ -1,0 +1,19 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+build/
+
+# Editor / OS
+.DS_Store
+.vscode/
+
+# Build output (CI publishes the PDF as an artifact / release)
+resume.pdf
+.image

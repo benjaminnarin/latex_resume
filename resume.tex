@@ -1,0 +1,171 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Benjamin Narin -- Resume}, pdfauthor={Benjamin Narin}}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.4in}
+\setlength{\footskip}{4pt}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+% Ensure PDF is machine readable
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{%
+\vspace{-1pt}\item
+  \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & {#2} \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabular*}\par\vspace{-7pt}%
+}
+
+\newcommand{\resumeThesisSubheading}[5]{%
+\vspace{-1pt}\item
+  \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1}{#2} & #3 \\
+    \textit{#4} & \textit{#5} \\
+  \end{tabular*}\par\vspace{-7pt}%
+}
+
+\newcommand{\resumeThesisSingleLineSubheading}[2]{%
+\vspace{-1pt}\item
+  \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+  \end{tabular*}\par\vspace{-7pt}%
+}
+
+\newcommand{\resumeSubSubheading}[2]{%
+\vspace{-1pt}\item
+  \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+    \textit{#1} & \textit{#2} \\
+  \end{tabular*}\par\vspace{-7pt}%
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingList}{\begin{itemize}[leftmargin=0.1in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemList}{\begin{itemize}[leftmargin=0.1in, label={}, itemsep=1pt, parsep=0pt, topsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+
+\begin{document}
+
+\begin{center}
+  \textbf{\LARGE Benjamin Narin} \\
+  \vspace{5pt}
+  \href{https://benjaminnarin.com}{https://benjaminnarin.com} $|$
+  \href{https://linkedin.com/in/benjaminnarin}{linkedin.com/in/benjaminnarin} $|$
+  \href{https://github.com/benjaminnarin}{github.com/benjaminnarin}
+\end{center}
+
+\section*{Summary}
+Robotics engineer and technical product owner with 6+ years in industry and 5 years of undergraduate and graduate research building autonomous robots that work around people. Found and fixed safety gaps in production robots, analyzed fleet data to find field failures, and took features from spec to launch. Exploring AI safety for robots and AI agents.
+
+\section{Experience}
+\resumeSubHeadingList
+  \resumeSubheading
+      {Embodied AI Exploration}{San Jose, CA}
+      {Career Break, Independent Work}{December 2025 -- Present}
+      \resumeItemList
+          \resumeItem{\textbullet\ Embodied AI Hackathons (Hugging Face, Seeed Studio): Built a robot that reminds people to take their medication and uses a VLM (NVIDIA Nemotron) to check the pill and dose (2026).}
+          \resumeItem{\textbullet\ Trained a robot arm to play tic-tac-toe from demonstrations at a hackathon (2025, while at Zebra).}
+          \resumeItem{\textbullet\ Completed BlueDot Impact's Future of AI course and joined AI safety reading groups and events on robotics and AI.}
+      \resumeItemListEnd
+  \resumeSubheading
+      {Zebra Technologies (formerly Fetch Robotics)}{San Jose, CA}
+      {Advanced Robotics Engineer}{June 2025 -- December 2025}
+      \resumeItemList
+          \resumeItem{\textbullet\ A customer running 200 robots across the U.S. was seeing about 2,000 mislocalizations a month. Worked with them to choose which failures to pull from fleet data, then led the fixes that brought them down to 3 a month.}
+          \resumeItem{\textbullet\ Co-led a 3-person task force on next-gen robot compute. Recommended an x86 board with a GPU over NVIDIA Jetson and a phased move from ROS 1 to ROS 2. The plan was adopted and underway until the business unit closed.}
+      \resumeItemListEnd
+  \resumeSubSubheading
+      {Senior Robotics Engineer}{May 2022 -- June 2025}
+      \resumeItemList
+          \resumeItem{\textbullet\ While scoping two feature requests, found that nothing stopped the navigation stack from driving the motors while the robot was in an error state or being joystick-driven. Worked with engineering leaders who helped write the ANSI/A3 R15.08 safety standard to design and ship a command-arbitration layer, moving the product toward compliance and unblocking both features.}
+          \resumeItem{\textbullet\ Technical product owner for a new peer-to-peer system that shares large floor maps between robots, letting a map built on one robot's downward-facing localization sensor be used by the whole fleet. Wrote the PRDs and specs, coordinated 8 engineers across infrastructure and robotics, and shipped it with a debug console and a physical fallback for field teams.}
+          \resumeItem{\textbullet\ Expanding into fulfillment required a broader architecture change, including replacing legacy stack components that couldn't support the required fleet size, analytics, and stability. Designed that replacement, aligned robotics and cloud tech leads on it, and owned the build of several core components after approval.}
+          \resumeItem{\textbullet\ Contributed to postmortems on robot behavior incidents, tracing root causes across robot and cloud.}
+          \resumeItem{\textbullet\ Mentored interns and junior engineers. Spoke on robot APIs at Zebra DevCon 2023 (Madrid) and represented Zebra at ICRA 2022 and 2024.}
+      \resumeItemListEnd
+  \resumeSubSubheading
+      {Robotics Engineer}{November 2021 -- May 2022}
+      \resumeItemList
+          \resumeItem{\textbullet\ Main developer and primary owner of the robot-to-cloud pipeline. Defined system behavior and user flows for key platform features.}
+      \resumeItemListEnd
+
+  \resumeSubheading
+      {Google Brain (now Google DeepMind), via AutoRoboto (contract)}{Mountain View, CA}
+      {AI Research Engineer}{January 2019 -- March 2021}
+      \resumeItemList
+          \resumeItem{\textbullet\ Adapted a shared robotics framework to run on 3 hardware platforms (about 9 robots) used by 6 research projects, with a common hardware abstraction layer so researchers could move faster.}
+          \resumeItem{\textbullet\ Helped move the team off one-off custom infrastructure and onto standard systems.}
+      \resumeItemListEnd
+
+  \resumeThesisSingleLineSubheading
+      {Earlier Experience}{2013 -- 2018}
+      \resumeItemList
+          \resumeItem{\textbullet\ \textbf{Researcher, OSU Personal Robotics Group (2013--2018):} Built and tested several versions of an autonomous wheelchair for people with severe physical disabilities.}
+          \resumeItem{\textbullet\ \textbf{Graduate Teaching Assistant, Mechatronics, OSU:} Taught labs 3 days a week on Arduino, sensor integration, and PID control.}
+          \resumeItem{\textbullet\ \textbf{Robotics Engineer Intern, suitX (2016):} Did extensive PCB design; standardized processes to build critical systems in parallel.}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Education -- Oregon State University}
+\resumeSubHeadingList
+  \resumeThesisSingleLineSubheading
+      {Master of Science: Robotics \textnormal{(Advisor: Dr. William Smart)}}{2016 -- 2018}
+  \vspace{2pt}%
+  \resumeThesisSingleLineSubheading
+       {Bachelor of Science: Computer Science $|$ Bachelor of Science: Electrical \& Computer Engineering}{2011 -- 2016}
+\resumeSubHeadingListEnd
+\vspace{5pt}
+
+\section{Technical Skills}
+\resumeSubHeadingList
+  \resumeItem{Python, C++, Git, Docker, Robot Operating System (ROS/ROS 2), Kubernetes, GTest, Linux, NVIDIA Jetson, Computer Networking}
+\resumeSubHeadingListEnd
+
+\section{Patents and Awards}
+\resumeItemList
+  \resumeItem{\textbullet\ Patent: Visual Guidance for Locating Obstructed Mobile Robots (US 12,318,915 B2)}
+  \resumeItem{\textbullet\ Patent: Guided Travel Mode with Dynamic Force Feedback for Mobile Robots (US 12,330,313 B2)}
+  \resumeItem{\textbullet\ Patent (Pending): Systems and Methods for Updating Maps for Robotic Navigation}
+  \resumeItem{\textbullet\ Patent (Pending): Dynamic Control of Operational Data Handling Settings in Mobile Robots}
+  \resumeItem{\textbullet\ Robotics for Good Competition Finalist, Dubai 2016}
+  % \resumeItem{\textbullet\ Paper: Wearable Computing to Enable Robot Microinteractions -- 23rd IEEE Int'l Symposium on Robot and Human Interactive Communication (RO-MAN), 2014}
+\resumeItemListEnd
+
+\end{document}
