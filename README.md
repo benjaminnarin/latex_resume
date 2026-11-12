@@ -37,3 +37,8 @@ To publish a version, push a tag; the PDF is attached to a GitHub Release:
 ```sh
 git tag v2026.10 && git push origin v2026.10
 ```
+
+Every push to `main` also refreshes a rolling **latest** prerelease, so this
+link always serves the current PDF:
+
+<https://github.com/benjaminnarin/latex_resume/releases/download/latest/Benjamin_Narin_Resume.pdf>

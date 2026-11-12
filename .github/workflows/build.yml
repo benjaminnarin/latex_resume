@@ -30,3 +30,25 @@ jobs:
         uses: softprops/action-gh-release@v3
         with:
           files: Benjamin_Narin_Resume.pdf
+
+  # Every push to main replaces the "latest" prerelease, giving a stable link:
+  # https://github.com/<owner>/<repo>/releases/download/latest/Benjamin_Narin_Resume.pdf
+  latest:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    concurrency: latest-release
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: resume
+      - name: Publish rolling release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release delete latest --cleanup-tag --yes || true
+          gh release create latest Benjamin_Narin_Resume.pdf \
+            --target "$GITHUB_SHA" --prerelease \
+            --title "Latest build" \
+            --notes "Built from $GITHUB_SHA. Tagged releases (v*) are the versioned snapshots."
