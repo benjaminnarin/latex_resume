@@ -1,17 +1,12 @@
 \documentclass[letterpaper,10pt]{article}
 
-\usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \hypersetup{pdftitle={Benjamin Narin -- Resume}, pdfauthor={Benjamin Narin}}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
-\usepackage{tabularx}
 \input{glyphtounicode}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
@@ -26,7 +21,7 @@
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
 \addtolength{\topmargin}{-0.7in}
-\addtolength{\textheight}{1.4in}
+\addtolength{\textheight}{1.5in}
 \setlength{\footskip}{4pt}
 
 \urlstyle{same}
@@ -36,7 +31,7 @@
 
 % Section formatting
 \titleformat{\section}{\large\bfseries\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing*{\section}{0pt}{8pt}{4pt}
+\titlespacing*{\section}{0pt}{5pt}{3pt}
 
 % Ensure PDF is machine readable
 \pdfgentounicode=1
@@ -48,14 +43,6 @@
   \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
     \textbf{#1} & {#2} \\
     \textit{#3} & \textit{#4} \\
-  \end{tabular*}\par\vspace{-7pt}%
-}
-
-\newcommand{\resumeThesisSubheading}[5]{%
-\vspace{-1pt}\item
-  \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
-    \textbf{#1}{#2} & #3 \\
-    \textit{#4} & \textit{#5} \\
   \end{tabular*}\par\vspace{-7pt}%
 }
 
@@ -100,20 +87,21 @@ Robotics engineer and technical product owner with 6+ years in industry and 5 ye
       {Career Break, Independent Work}{December 2025 -- Present}
       \resumeItemList
           \resumeItem{\textbullet\ Embodied AI Hackathons (Hugging Face, Seeed Studio): Built a robot that reminds people to take their medication and uses a VLM (NVIDIA Nemotron) to check the pill and dose (2026).}
-          \resumeItem{\textbullet\ Trained a robot arm to play tic-tac-toe from demonstrations at a hackathon (2025, while at Zebra).}
+          \resumeItem{\textbullet\ Wrote Job Scout, a Claude Code agent that checks about 80 job sites daily and scores new openings against my profile.}
+          \resumeItem{\textbullet\ Building a Steam Deck controller for ROS 2 robots (Rust app, C++ gateway). Works on a TurtleBot 1.}
           \resumeItem{\textbullet\ Completed BlueDot Impact's Future of AI course and joined AI safety reading groups and events on robotics and AI.}
       \resumeItemListEnd
   \resumeSubheading
       {Zebra Technologies (formerly Fetch Robotics)}{San Jose, CA}
       {Advanced Robotics Engineer}{June 2025 -- December 2025}
       \resumeItemList
-          \resumeItem{\textbullet\ A customer running 200 robots across the U.S. was seeing about 2,000 mislocalizations a month. Worked with them to choose which failures to pull from fleet data, then led the fixes that brought them down to 3 a month.}
           \resumeItem{\textbullet\ Co-led a 3-person task force on next-gen robot compute. Recommended an x86 board with a GPU over NVIDIA Jetson and a phased move from ROS 1 to ROS 2. The plan was adopted and underway until the business unit closed.}
+          \resumeItem{\textbullet\ A customer running 200 robots across the U.S. was seeing about 2,000 mislocalizations a month. Worked with them to choose which failures to pull from fleet data, then led the fixes that brought them down to 3 a month.}
       \resumeItemListEnd
   \resumeSubSubheading
       {Senior Robotics Engineer}{May 2022 -- June 2025}
       \resumeItemList
-          \resumeItem{\textbullet\ While scoping two feature requests, found that nothing stopped the navigation stack from driving the motors while the robot was in an error state or being joystick-driven. Worked with engineering leaders who helped write the ANSI/A3 R15.08 safety standard to design and ship a command-arbitration layer, moving the product toward compliance and unblocking both features.}
+          \resumeItem{\textbullet\ While scoping two features, found that returning to the previous mode after an error or on exiting a feature wasn't always safe, and nothing prevented it. Worked with engineers who helped write the ANSI/A3 R15.08 safety standard to design and ship a mode manager that switched modes based on robot state and user input, moving toward compliance and unblocking both features.}
           \resumeItem{\textbullet\ Technical product owner for a new peer-to-peer system that shares large floor maps between robots, letting a map built on one robot's downward-facing localization sensor be used by the whole fleet. Wrote the PRDs and specs, coordinated 8 engineers across infrastructure and robotics, and shipped it with a debug console and a physical fallback for field teams.}
           \resumeItem{\textbullet\ Expanding into fulfillment required a broader architecture change, including replacing legacy stack components that couldn't support the required fleet size, analytics, and stability. Designed that replacement, aligned robotics and cloud tech leads on it, and owned the build of several core components after approval.}
           \resumeItem{\textbullet\ Contributed to postmortems on robot behavior incidents, tracing root causes across robot and cloud.}
@@ -129,8 +117,9 @@ Robotics engineer and technical product owner with 6+ years in industry and 5 ye
       {Google Brain (now Google DeepMind), via AutoRoboto (contract)}{Mountain View, CA}
       {AI Research Engineer}{January 2019 -- March 2021}
       \resumeItemList
-          \resumeItem{\textbullet\ Adapted a shared robotics framework to run on 3 hardware platforms (about 9 robots) used by 6 research projects, with a common hardware abstraction layer so researchers could move faster.}
-          \resumeItem{\textbullet\ Helped move the team off one-off custom infrastructure and onto standard systems.}
+          \resumeItem{\textbullet\ Contributed to a shared robotics framework spanning 6 research projects, allowing researchers to iterate faster.}
+          \resumeItem{\textbullet\ Helped move multiple teams off one-off custom infrastructure and onto standard infrastructure.}
+          \resumeItem{\textbullet\ Collaborated on a robot teleoperation platform that collected expert demonstrations for robot RL training.}
       \resumeItemListEnd
 
   \resumeThesisSingleLineSubheading
@@ -149,13 +138,16 @@ Robotics engineer and technical product owner with 6+ years in industry and 5 ye
       {Master of Science: Robotics \textnormal{(Advisor: Dr. William Smart)}}{2016 -- 2018}
   \vspace{2pt}%
   \resumeThesisSingleLineSubheading
-       {Bachelor of Science: Computer Science $|$ Bachelor of Science: Electrical \& Computer Engineering}{2011 -- 2016}
+       {Bachelor of Science: Computer Science}{2011 -- 2016}
+  \vspace{2pt}%
+  \resumeThesisSingleLineSubheading
+       {Bachelor of Science: Electrical \& Computer Engineering}{2011 -- 2016}
 \resumeSubHeadingListEnd
 \vspace{5pt}
 
 \section{Technical Skills}
 \resumeSubHeadingList
-  \resumeItem{Python, C++, Git, Docker, Robot Operating System (ROS/ROS 2), Kubernetes, GTest, Linux, NVIDIA Jetson, Computer Networking}
+  \resumeItem{Python, C++, Git, Docker, ROS/ROS 2, Kubernetes, GTest, Linux, NVIDIA Jetson, Computer Networking, Agentic Development}
 \resumeSubHeadingListEnd
 
 \section{Patents and Awards}
